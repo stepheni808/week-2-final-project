@@ -530,13 +530,12 @@ section {
 
     div {
         display: block;
-        unicode-bidi: isolate;
-    }
+        }
 
     #quality .row {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: left;
     }
 
     .row {
@@ -699,14 +698,14 @@ h2 {
 }
 
 #steps .row {
-    flex-direction: column;
+    flex-direction: flex;
     align-items: center;
     display: flex;
     justify-content: space-between;
 }
 
 .row {
-    display: flex;
+    
     flex-wrap: wrap;
     gap: 20px;
     width: 100%;
@@ -734,7 +733,6 @@ figure {
     margin-block-end: 1em;
     margin-inline-start: 40px;
     margin-inline-end: 40px;
-unicode-bidi: isolate;
 }
 
 .steps__img {
@@ -742,7 +740,7 @@ unicode-bidi: isolate;
 }
 
 img {
-    width: 100%;
+    width: 75%;
     overflow-clip-margin: content-box;
     overflow: clip;
 }
@@ -760,7 +758,6 @@ img {
  }
 
  .steps__description {
-    display: flex;
     width: 100%;
     max-width: 448px;
     padding: 32px 0;
@@ -780,7 +777,7 @@ img {
  }
 
  .step__number {
-    font-style: 1.5rem;
+    font-style: 25px;
     font-weight: bold;
     margin-right: 10px;
  }
@@ -795,47 +792,78 @@ img {
 
  */
  
+ /* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #243e63;
+  }
+
+/* SECTION */
  section {
     padding: 0 32px;
  }
+ 
+ /* CONTAINER */
 
  .container {
     padding: 96px 0;
  } 
 
-  .values .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-      }
+ /* ROW */
+
+  
 
       .row {
         width: 100%;
         max-width: 1280px;
         margin: 0 auto;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
       }
 
-      .values__description {
+/* VALUES SECTION */
+
+.values__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+            .values__description {
         padding: 32px 64px 32px 0;
         width: 50%;
         text-align: center;
               }
 
-              .section__tag {
-                font-size: 16px;
-                color: #6415ff;
-                letter-spacing: 1.6px;
-                font-weight: 700;
-                text-transform: uppercase;
-              }
+              .values__list {
+                margin: 0 auto;
+                flex-direction: column;
+                max-width: 320px;
+                display: flex;
+            }
 
-              #values .section__title {
-                margin-top: 16px;
-                margin-bottom: 32px;
-                line-height: 1.25;
-              }
+            .value {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
 
-              .section__title {
+            .value:nth-of-type(1) {
+                margin-right: 32px;
+                margin-top: 32px;
+             }
+
+             .value:nth-child(1) {
+                margin-top: 40px;
+                color: #9ae6b4;
+            }
+
+            /* TITLES */
+
+            .section__title {
                 font-size: 30px;
                 font-weight: 900;
                 line-height: 1.25;
@@ -845,43 +873,26 @@ img {
                 letter-spacing: 0.025em;
               }
 
-              * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                color: #243e63;
+              #values .section__title {
+                margin-top: 16px;
+                margin-bottom: 32px;
+                line-height: 1.25;
+              }
+              .section__tag {
+                font-size: 16px;
+                color: #6415ff;
+                letter-spacing: 1.6px;
+                font-weight: 700;
+                text-transform: uppercase;
               }
 
-              h2 {
-                font-size: 1.5em;
-                font-weight: bold;
-                } 
+              .value__title {
+                display: flex;
+                align-items: center;
+              }
 
-    #values .section__title {
-        margin-top: 16px;
-        margin-bottom: 32px;
-        line-height: 1.25;
-    }
-
-    .section__title {
-        font-size: 30px;
-        color: #243e63;
-        font-weight: 900;
-        line-height: 1.25;
-        margin: 16px 0;
-        letter-spacing: 0.025em;
-}
-
-h2 {
-    display: block;
-    font-size: 1.5em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    unicode-bidi: isolate;
-}
+                   
+/* PARAGRAPH */
 
 .section__para {
     font-size: 14px;
@@ -889,50 +900,200 @@ h2 {
     color: #7c8ba1;
     line-height: 1.625;
 }
-        
-div {
+
+/* HEADINGS */
+
+h2 {
     display: block;
-    unicode-bidi: isolate;
+    font-size: 1.5em;
+    margin: 0.83em 0;
+    font-weight: bold;
 }
+        
 
-.values__list {
-    margin: 0 auto;
-    flex-direction: column;
-    max-width: 320px;
-    display: flex;
-}
+/* IMAGES */
 
-.value:nth-of-type(1) {
-    margin-right: 32px;
-    margin-top: 32px;
-
-}
-
-.value:nth-child(1) {
-    margin-top: 40px;
-    background-color: #9ae6b4;
-}
-
-.value {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.value__title {
-    display: flex;
-    align-items: center;
-}
 
 .value__img--wrapper {
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 36px;
-    height: 36px;
-    display: flex;
 }
 
+/* 
 
+PRICING
 
+*/
+
+section {
+    padding: 0 32px;
+    display:block;
+}
+
+.container {
+    padding: 96px 0;
+}
+
+#pricing .row {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.section__tag {
+    font-size: 16px;
+    color: #6415ff;
+    letter-spacing: 1.6px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.section__title {
+    font-size: 48px;
+    font-weight: 900;
+    color: rgb(36, 62, 99);
+    line-height: 1.5;
+    margin: 16px 0;
+    letter-spacing: 0.025em;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+}
+
+#pricing .section__title {
+    font-size: 48px;
+    text-align: center;
+}
+
+.section__para {
+font-size: 18px;
+font-weight: 500;
+color: #243e63;
+line-height: 1.625;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    display: block;
+}
+
+.plans {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+.plan {
+    margin-right: 0px;
+    width: 100%;
+    max-width: 384px;
+    margin: 64px 32px 0 0;
+    padding-top: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: inset;
+    position: relative;
+    z-index: 100;
+    background: white;
+}
+
+.plan__stripe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+}
+
+.plan__top, .plan__middle, .plan__bottom {
+    padding: 32px;
+    text-align: center;
+}
+
+.plan__name {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.625;
+}
+
+.plan__price {
+    font-size: 36px;
+    margin: 4px 0;
+    font-weight: bold;
+    line-height: 1.625;
+}  
+
+.plan__duration {
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    line-height: 1.625;
+}
+
+.plan__target {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.025em;
+}
+
+.plan__feature {
+    margin-top: 20px;
+    font-weight: 500;
+    color: #243e63;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    display: block;
+}
+
+.plan__bottom {
+    padding: 32px 96px;
+    z-index: 10;
+    position: relative;
+}
+
+div {
+    display: block;
+}
+
+.plan__button {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 16px 32px;
+    border-radius: 500px;
+    border: none;
+    font-size: 14px;
+    width: 100%;
+    max-width: 192px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    transition: all 300ms;
+}
+
+button {
+    cursor: pointer;
+    appearance: auto;
+    
+}
