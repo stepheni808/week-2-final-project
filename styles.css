@@ -657,6 +657,8 @@ section {
 
 section {
   padding: 0 32px;
+  display: block;
+  unicode-bidi: isolate;
 }
 
 #values .row {
@@ -665,11 +667,7 @@ section {
   align-items: center;
 }
 
-#values .section__title {
-  margin-top: 16px;
-  margin-bottom: 32px;
-  line-height: 1.25;
-}
+
 
 .row {
   width: 100%;
@@ -682,12 +680,28 @@ section {
   width: 50%;
 }
 
+
+img {
+  width: 50%;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+
+**********
+
+
 .section__tag {
   font-size: 16px;
   color: #6415ff;
   letter-spacing: 1.6px;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+#values .section__title {
+  margin-top: 16px;
+  margin-bottom: 32px;
 }
 
 .section__title {
@@ -739,12 +753,6 @@ section {
   margin-top: 32px;
 }
 
-
-
-
-.value:nth-child(2) {
-  background-color: #feb2b2;
-}
 
 .value:nth-child(2) .value__img--wrapper {
   background-color: #feb2b2;
@@ -926,7 +934,7 @@ p {
   align-items: center;
 }
 
-/* VALUES SECTION */
+
 
 
 
@@ -960,26 +968,12 @@ figure {
 
 
 
-/* TITLES */
-
-
-
-/* PARAGRAPH */
 
 
 
 
 
 
-
-/* HEADINGS */
-
-h2 {
-  display: block;
-  font-size: 2.5em;
-  margin: 0.83em 0;
-  font-weight: bold;
-}
 
 /* 
 
@@ -987,16 +981,23 @@ PRICING
 
 */
 
+
+.container {
+  padding: 96px 0;
+  margin: 0;
+  box-sizing: border-box;
+  margin-left: 16px;
+}
+
 section {
   padding: 0 32px;
   display: block;
 }
 
-.container {
-  padding: 96px 0;
+main {
+  margin-bottom: 96px;
 }
 
-/* pricing row */
 
 #pricing .row {
   margin-top: 40px;
@@ -1006,7 +1007,12 @@ section {
   justify-content: center;
 }
 
-/* section titles */
+
+.row {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
 
 .section__tag {
   font-size: 16px;
@@ -1030,15 +1036,9 @@ section {
   letter-spacing: 0.025em;
 }
 
-h2 {
-  display: block;
-  font-size: 1.5em;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-  unicode-bidi: isolate;
+
+.purple {
+  color: #6415ff;
 }
 
 #pricing .section__para {
@@ -1052,6 +1052,110 @@ h2 {
   color: #7c8ba1;
   line-height: 1.625;
 }
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.plans {
+  flex-direction: row;
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 32px;
+  position: relative;
+  z-index: 100;
+}
+
+
+.plan {
+  margin-right: 0px;
+  width: 100%;
+  max-width: 384px;
+  margin: 64px 32px 0 0;
+  padding-top: 8px;
+  border-top: 2px solid #9ae6b4;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: inset;
+  position: relative;
+  z-index: 100;
+  background: white;
+}
+
+.plan:nth-child(1) .plan__stripe, .plan:nth-child(1) .plan__button {
+  color: #f7fafc;
+  background: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
+}
+
+.plan__stripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+}
+
+.plan__top,
+.plan__middle,
+.plan__bottom {
+  padding: 32px;
+  text-align: center;
+}
+
+.plan__name {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.625;
+}
+
+.plan__price {
+  font-size: 48px;
+  margin: 4px 0;
+  font-weight: bold;
+  line-height: 1.625;
+}
+
+.plan__duration {
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  line-height: 1.625;
+  color: #a0aec0;
+
+}
+
+
+
+
+****************************************************************************
+/* pricing row */
+
+
+
+/* section titles */
+
+
+
+
+
+
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+
+
 
 p {
   display: block;
@@ -1076,16 +1180,7 @@ p {
   justify-content: space-around;
 }
 
-.plans {
-  flex-direction: row;
-  align-items: flex-start;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  gap: 32px;
-  position: relative;
-  z-index: 100;
-}
+
 
 /* indiv plan boxes */
 
@@ -1147,31 +1242,16 @@ p {
   background: white;
 }
 
-.plan__stripe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 8px;
-}
+
 
 .plan:nth-child(1) .plan__middle {
   border-top: 2px solid rgb(229, 231, 235);
   border-bottom: 2px solid rgb(229, 231, 235);
 }
 
-.plan__top,
-.plan__middle,
-.plan__bottom {
-  padding: 32px;
-  text-align: center;
-}
 
-.plan__name {
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 1.625;
-}
+
+
 
 .plan2__name {
   font-size: 20px;
@@ -1180,12 +1260,7 @@ p {
   color: white;
 }
 
-.plan__price {
-  font-size: 36px;
-  margin: 4px 0;
-  font-weight: bold;
-  line-height: 1.625;
-}
+
 
 .plan2__price {
   font-size: 36px;
@@ -1195,12 +1270,7 @@ p {
   color: white;
 }
 
-.plan__duration {
-  font-size: 16px;
-  letter-spacing: 0.1em;
-  font-weight: bold;
-  line-height: 1.625;
-}
+
 
 .plan2__duration {
   font-weight: bold;
@@ -1312,9 +1382,7 @@ section {
   padding: 0 32px;
 }
 
-main {
-  margin-bottom: 96px;
-}
+
 
 .container {
   padding: 96px 0;
@@ -1614,6 +1682,4 @@ main {
   width: 50%;
 }
 
-.values__img {
-  width: 100%;
-}
+
